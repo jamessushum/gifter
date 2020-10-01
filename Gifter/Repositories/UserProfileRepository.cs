@@ -105,7 +105,7 @@ namespace Gifter.Repositories
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"INSERT INTO UserUserProfile (Name, Email, ImageUrl, Bio, DateCreated)
+                    cmd.CommandText = @"INSERT INTO UserProfile (Name, Email, ImageUrl, Bio, DateCreated)
                                         OUTPUT INSERTED.ID
                                         VALUES (@Name, @Email, @ImageUrl, @Bio, @DateCreated)";
 
