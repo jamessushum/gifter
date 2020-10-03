@@ -50,7 +50,7 @@ const PostForm = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container border p-4">
       <h3 className="mb-4">Add a new post!</h3>
       <Form id="newPost-form">
         <FormGroup row>
