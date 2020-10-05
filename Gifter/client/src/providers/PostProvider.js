@@ -10,7 +10,6 @@ export const PostProvider = (props) => {
   const getAllPosts = async () => {
     const res = await fetch("/api/post/getwithcomments");
     const value = await res.json();
-    console.log(value);
     return setPosts(value);
   };
 
@@ -26,6 +25,12 @@ export const PostProvider = (props) => {
     return setSearchedPosts(value);
   }
 
+  const getPost = async (id) => {
+    const res = await fetch(`/api/post/getwithcomments/${id}`);
+    const value = await res.json();
+    return value;
+  }
+
   const addPost = (post) => {
     return fetch("/api/post", {
       method: "POST",
@@ -37,7 +42,7 @@ export const PostProvider = (props) => {
   };
 
   return (
-    <PostContext.Provider value={{ posts, getAllPosts, addPost, userProfiles, getAllUserProfiles, searchedPosts, getSearchPosts }}>
+    <PostContext.Provider value={{ posts, getAllPosts, addPost, userProfiles, getAllUserProfiles, searchedPosts, getSearchPosts, getPost }}>
       {props.children}
     </PostContext.Provider>
   )
