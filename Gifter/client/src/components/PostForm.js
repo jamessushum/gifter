@@ -50,8 +50,8 @@ const PostForm = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h3 className="mb-4">Add a new post!</h3>
+    <div className="container border p-4">
+      <h3 className="mb-4">Add New Post</h3>
       <Form id="newPost-form">
         <FormGroup row>
           <Label for="Title" sm={2}>Title:</Label>
