@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input, Col, FormFeedback } from "reacts
 import { useHistory } from "react-router-dom";
 
 const PostForm = () => {
-  const { addPost, userProfiles, getAllUserProfiles, getAllPosts } = useContext(PostContext);
+  const { addPost, userProfiles, getAllUserProfiles } = useContext(PostContext);
 
   // useHistory hook allows us to programatically redirect users
   const history = useHistory();
