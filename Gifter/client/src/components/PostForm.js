@@ -1,9 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { PostContext } from "../providers/PostProvider";
 import { Button, Form, FormGroup, Label, Input, Col, FormFeedback } from "reactstrap";
+import { useHistory } from "react-router-dom";
 
 const PostForm = () => {
   const { addPost, userProfiles, getAllUserProfiles, getAllPosts } = useContext(PostContext);
+
+  // useHistory hook allows us to programatically redirect users
+  const history = useHistory();
 
   const [formFeedback, setFormFeedback] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -38,9 +42,7 @@ const PostForm = () => {
       setIsLoading(true);
       addPost(newPost)
         .then(() => {
-          document.getElementById("newPost-form").reset();
-          getAllPosts();
-          window.location.reload();
+          history.push("/");
         })
     }
   }
@@ -50,7 +52,7 @@ const PostForm = () => {
   }, []);
 
   return (
-    <div className="container border p-4">
+    <div className="container border p-4 mt-4">
       <h3 className="mb-4">Add New Post</h3>
       <Form id="newPost-form">
         <FormGroup row>
