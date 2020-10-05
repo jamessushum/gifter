@@ -7,6 +7,7 @@ import Post from "./Post";
 const PostDetails = () => {
   const [post, setPost] = useState();
   const { getPost } = useContext(PostContext);
+  // Using useParams hook to access the route parameter
   const { id } = useParams();
 
   useEffect(() => {
