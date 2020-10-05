@@ -10,7 +10,6 @@ export const PostProvider = (props) => {
   const getAllPosts = async () => {
     const res = await fetch("/api/post/getwithcomments");
     const value = await res.json();
-    console.log(value);
     return setPosts(value);
   };
 
